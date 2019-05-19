@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Modak');
+
+/* font-family: 'Modak', cursive; */
+/* font-family: 'Roboto Condensed', sans-serif; */
+
+* {
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline: none;
+    font-size: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+    background-color: beige;
+}
+
+.root {
+    min-width: 320px;
+}
+
+.num_create {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.num_create .description {
+    font-size: 15px;
+    padding-bottom: 5px;
+}
+
+.num_create .input {
+    background-color: lightgrey;
+    width: 60px;
+    height: 28px;
+    font-size: 15px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+
+.num_create .button_send {
+    font-size: 15px;
+    margin-left: 10px;
+    background-color: lightsteelblue;
+    border: 1px solid black;
+    padding: 4px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.fix_arr_nums {
+    margin-bottom: 10px;
+}
+
+.arr_nums {
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    padding-left: 6px;
+}
+
+.arr_nums .el {
+    font-size: 10px;
+    display: inline-block;
+    margin: 4px 10px 4px 0;
+    width: 25px;
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.timer {
+    width: 200px;
+    height: 100px;
+    background-color: lightseagreen;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: center;
+    padding-top: 22px;
+}
+
+.timer .screen {
+    width: 140px;
+    background-color: whitesmoke;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 30px;
+    border: 1px solid lightslategray;
+    border-radius: 3px;
+}
+
+.timer .logo {
+    font-size: 30px;
+    font-family: 'Modak', cursive;
+    color: darkslategrey;
+}
+
+.control_panel {
+    margin: 0 auto;
+    width: 300px;
+    padding: 10px;
+}
+
+.control_panel .speeds_fix {
+    margin: 0 auto;
+    width: 150px;
+    padding-bottom: 15px;
+}
+
+.control_panel .x1,
+.control_panel .x2,
+.control_panel .x3 {
+    font-size: 15px;
+    background-color: lightcoral;
+}
+
+.control_panel .button {
+    width: 30%;
+    padding: 8px 5px;
+    margin-right: 5%;
+    display: inline-block;
+    border-radius: 5px;
+    border: 1px solid lightslategray;
+    transition: transform 0.1s;
+    cursor: pointer;
+}
+
+.control_panel .button_mod {
+    font-size: 13px;
+    background-color: lightsteelblue;
+}
+.button:disabled {
+    opacity: 0.5;
+    color: black;
+    pointer-events: none;
+}
+
+.control_panel .button:hover,
+.num_create .button_send:hover {
+    transform: scale(1.1);
+}
+
+.control_panel .button:active,
+.num_create .button_send:active {
+    transform: scale(1.2);
+}
+
+.control_panel .button:last-child {
+    margin-right: 0;
+}

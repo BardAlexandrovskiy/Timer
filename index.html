@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class='root'>
+        <div class="num_create">
+            <div class='description'>Создать декоративные цифры</div>
+            <input type='number' class='input' id='num_create' min='1' max='100' />
+            <button class='button_send' id='send_num'>Отправить</button>
+        </div>
+        <div class='fix_arr_nums'>
+            <ul class='arr_nums' id='arr_nums'>
+            </ul>
+        </div>
+        <div class='timer'>
+            <div class='screen' id='screen'>0</div>
+            <div class='logo'>Timer</div>
+        </div>
+        <div class='control_panel'>
+            <div class='speeds_fix'>
+                <button class='button x1' id='x1_speed' disabled>x1</button>
+                <button class='button x2' id='x2_speed'>x2</button>
+                <button class='button x3' id='x3_speed'>x3</button>
+            </div>
+            <button class='button start button_mod' id='start'>Start</button>
+            <button class='button pause button_mod' id='pause' disabled>Pause</button>
+            <button class='button stop button_mod' id='stop' disabled>Stop</button>
+        </div>
+    </div>
+    <script src='index.js'></script>
+</body>
+
+</html>
