@@ -20,16 +20,20 @@ let timerСounterReverse = 0;
 
 function counter() {
     const speed = intervalTime / speedFactor;
-    const numTimer = document.querySelectorAll('#arr_nums_el');
+    const numTimer = document.querySelectorAll('.square_el');
     intervalId = setInterval(() => {
         if (numTimer !== undefined) {
             if (timerCounterNum < squaresAmount) {
-                numTimer[timerCounterNum].style.backgroundColor = 'lightgreen';
+                const square = numTimer[timerCounterNum].style;
+                square.backgroundColor = 'lightgreen';
+                square.color = 'black'
                 timerCounterNum += 1;
                 timerСounterReverse += 1;
             } else if (timerСounterReverse > 0) {
                 timerСounterReverse -= 1;
-                numTimer[timerСounterReverse].style.backgroundColor = 'lightgrey';
+                const square = numTimer[timerСounterReverse];
+                square.style.backgroundColor = 'darkslateblue';
+                square.style.color = 'white';
                 if (timerСounterReverse === 0) {
                     timerCounterNum = 0;
                 }
@@ -58,8 +62,7 @@ function addNums() {
             squaresAmount = +numCreate.value;
             for (let i = 1; i <= squaresAmount; i += 1) {
                 const newEl = parentEl.appendChild(document.createElement('li'));
-                newEl.setAttribute('class', 'el');
-                newEl.setAttribute('id', 'arr_nums_el');
+                newEl.setAttribute('class', 'square_el');
                 newEl.innerText = i;
             }
         }
@@ -78,6 +81,22 @@ function toggleDisabled(arrBtns) {
         }
         buttonCopy.disabled = disabled;
     });
+}
+
+function changeSpeed(speed) {
+    // eslint-disable-next-line func-names
+    return function () {
+        toggleDisabled([
+            { btn: buttonX1, disabled: speed === 1 },
+            { btn: buttonX2, disabled: speed === 2 },
+            { btn: buttonX3, disabled: speed === 3 }
+        ]);
+        speedFactor = speed;
+        if (isClick) {
+            clearInterval(intervalId);
+            counter();
+        };
+    }
 }
 
 numCreate.addEventListener('keydown', (e) => {
@@ -113,48 +132,17 @@ buttonStop.addEventListener('click', () => {
     ]);
     isClick = false;
     pauseAndStop('stop');
-    const arrOfnums = document.querySelectorAll('#arr_nums_el');
+    const arrOfnums = document.querySelectorAll('.square_el');
     if (arrOfnums !== undefined) {
         timerCounterNum = 0;
         timerСounterReverse = 0;
         for (let i = 0; i < arrOfnums.length; i += 1) {
-            arrOfnums[i].style.backgroundColor = 'lightgrey';
+            const square = arrOfnums[i].style;
+            square.backgroundColor = 'lightgrey';
+            square.color = 'black';
         }
     }
 });
-buttonX1.addEventListener('click', () => {
-    toggleDisabled([
-        { btn: buttonX1, disabled: true },
-        { btn: buttonX2 },
-        { btn: buttonX3 }
-    ]);
-    speedFactor = 1;
-    if (isClick) {
-        clearInterval(intervalId);
-        counter();
-    };
-});
-buttonX2.addEventListener('click', () => {
-    toggleDisabled([
-        { btn: buttonX1 },
-        { btn: buttonX2, disabled: true },
-        { btn: buttonX3 }
-    ]);
-    speedFactor = 2;
-    if (isClick) {
-        clearInterval(intervalId);
-        counter();
-    };
-});
-buttonX3.addEventListener('click', () => {
-    toggleDisabled([
-        { btn: buttonX1 },
-        { btn: buttonX2 },
-        { btn: buttonX3, disabled: true }
-    ]);
-    speedFactor = 3;
-    if (isClick) {
-        clearInterval(intervalId);
-        counter();
-    };
-});
+buttonX1.addEventListener('click', changeSpeed(1));
+buttonX2.addEventListener('click', changeSpeed(2));
+buttonX3.addEventListener('click', changeSpeed(3));

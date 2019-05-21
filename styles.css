@@ -65,7 +65,7 @@ body {
     padding-left: 6px;
 }
 
-.arr_nums .el {
+.arr_nums .square_el{
     font-size: 10px;
     display: inline-block;
     margin: 4px 10px 4px 0;
@@ -129,13 +129,15 @@ body {
     border: 1px solid lightslategray;
     transition: transform 0.1s;
     cursor: pointer;
+    color: dark
 }
 
 .control_panel .button_mod {
     font-size: 13px;
     background-color: lightsteelblue;
 }
-.button:disabled {
+.button:disabled,
+.num_create .button_send:disabled {
     opacity: 0.5;
     color: black;
     pointer-events: none;
