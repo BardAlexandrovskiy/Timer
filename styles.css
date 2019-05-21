@@ -19,11 +19,13 @@ body {
 }
 
 .root {
-    min-width: 320px;
+    width: 320px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .num_create {
-    padding: 10px 0;
+    padding: 30px 0;
     text-align: center;
 }
 
@@ -43,15 +45,23 @@ body {
     vertical-align: middle;
 }
 
-.num_create .button_send {
+.num_create .button {
     font-size: 15px;
     margin-left: 10px;
     background-color: lightsteelblue;
     border: 1px solid black;
     padding: 4px 5px;
-    border-radius: 3px;
-    cursor: pointer;
     vertical-align: middle;
+}
+
+.sound_toggle {
+    background-color: lightblue;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    border: 1px solid black;
+    padding: 3px;
 }
 
 .fix_arr_nums {
@@ -103,19 +113,16 @@ body {
 
 .control_panel {
     margin: 0 auto;
-    width: 300px;
     padding: 10px;
 }
 
 .control_panel .speeds_fix {
     margin: 0 auto;
-    width: 150px;
-    padding-bottom: 15px;
+    width: 200px;
+    padding-bottom: 13px;
 }
 
-.control_panel .x1,
-.control_panel .x2,
-.control_panel .x3 {
+.control_panel .speed {
     font-size: 15px;
     background-color: lightcoral;
 }
@@ -125,31 +132,27 @@ body {
     padding: 8px 5px;
     margin-right: 5%;
     display: inline-block;
-    border-radius: 5px;
     border: 1px solid lightslategray;
-    transition: transform 0.1s;
-    cursor: pointer;
-    color: dark
 }
 
 .control_panel .button_mod {
     font-size: 13px;
     background-color: lightsteelblue;
 }
-.button:disabled,
-.num_create .button_send:disabled {
+
+.button {
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.1s;
+}
+
+.button:disabled {
     opacity: 0.5;
     color: black;
     pointer-events: none;
 }
 
-.control_panel .button:hover,
-.num_create .button_send:hover {
-    transform: scale(1.1);
-}
-
-.control_panel .button:active,
-.num_create .button_send:active {
+.button:active {
     transform: scale(1.2);
 }
 

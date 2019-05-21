@@ -13,22 +13,23 @@
     <div class='root'>
         <div class="num_create">
             <div class='description'>Создать декоративные цифры</div>
-            <input type='number' class='input' id='num_create' min='1' max='100' />
-            <button class='button_send' id='send_num'>Создать</button>
+            <input type='number' class='input' id='input_create_num' min='1' max='100' />
+            <button class='button' id='button_create_num'>Создать</button>
         </div>
+        <button class='button sound_toggle' id='sound_toggle'>Sound: on</button>
         <div class='fix_arr_nums'>
             <ul class='arr_nums' id='arr_nums'>
             </ul>
         </div>
         <div class='timer'>
-            <div class='screen' id='screen'>0</div>
+            <div class='screen' id='screen'></div>
             <div class='logo'>Timer</div>
         </div>
         <div class='control_panel'>
             <div class='speeds_fix'>
-                <button class='button x1' id='x1_speed' disabled>x1</button>
-                <button class='button x2' id='x2_speed'>x2</button>
-                <button class='button x3' id='x3_speed'>x3</button>
+                <button class='button x1 speed' id='x1_speed' disabled>x1</button>
+                <button class='button x2 speed' id='x2_speed'>x2</button>
+                <button class='button x3 speed' id='x3_speed'>x3</button>
             </div>
             <button class='button start button_mod' id='start'>Start</button>
             <button class='button pause button_mod' id='pause' disabled>Pause</button>
